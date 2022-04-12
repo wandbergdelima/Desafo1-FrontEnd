@@ -15,9 +15,11 @@ function consumiuApi(value) {
       // const mostrarSugestoes = response.data.suggestions;
       const mostrarProdutos = response.data.products;
       mostrarProdutos.forEach(element => {
-        if (element.name.includes(value)) {
-          mostrar.appendChild(document.createTextNode(JSON.stringify(element)));
-          console.log(element.name);
+        if (element.name.includes(value) === true && value !== '') {
+          paragraf = document.createElement('p');
+          mostrar.appendChild(paragraf)
+          valorResultante = document.createTextNode(JSON.stringify(element))
+          paragraf.appendChild(valorResultante)
         } else {
           console.log('Não encontrado');
           mostrar.textcontent = 'Não encontrado';
